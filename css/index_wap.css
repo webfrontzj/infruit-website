@@ -260,6 +260,7 @@
     justify-content: flex-start;
 }
 .contact-top{
+    width: 100%;
     text-align: left;
     padding:50px 0;
     border-bottom: 1px dashed #3B3B3B;
