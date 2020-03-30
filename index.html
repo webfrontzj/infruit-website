@@ -1,0 +1,234 @@
+
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,height=device-height, user-scalable=no,initial-scale=1">
+<title>INFRUIT</title>
+<link rel="stylesheet" href="./css/jquery.fullpage.css">
+<link rel="stylesheet" media="screen and (min-width:1000px)" href="./css/index.css">
+<link rel="stylesheet" media="screen and (max-width:1000px)" href="./css/index_wap.css">
+<style>
+
+.section { text-align: center; font: 50px "Microsoft Yahei"; color: #fff;}
+
+</style>
+<script src="./js/jquery.js"></script>
+<script src="./js/jquery-ui.min.js"></script>
+<script src="./js/jquery.fullpage.min.js"></script>
+<script>
+
+$(document).ready(function() {
+    var client_w=document.body.clientWidth || document.documentElement.clientWidth;
+    if(client_w > 1000){
+        $.fn.fullpage({
+            slidesColor: ['#FF8300', '#FF4F88', '#FFCF3C', '#76DDC6','#FF8300'],//每一屏的背景色
+            anchors: ['page1', 'page2', 'page3', 'page4','page5'],//url后的锚点
+            menu: '#menu',//顶部导航
+            navigation: true,//右侧小圆点导航
+            scrollingSpeed: 600,//滚动转换的速度 ms
+        });
+
+    }else{
+        //添加第六屏导航
+        $('.nav-section').append('<div class="section-item" data-menuanchor="page6"><a href="#page6">联系我们</a></div>')
+        // 添加第六屏
+        $('.wap-sj').before(`
+        <div class="section" id="contact">
+            <div class="mysection">
+                <div class="section-wrapper">
+                    <div class="contact-top">
+                        <div class="contact-title">联系我们</div>
+                        <ul class="contact-ul">
+                            <li>客服电话：400-965-6505</li>
+                            <li>在线时间：周一至周五 10:00 —— 19:00</li>
+                            <li>北京微微盒子科技有限公司    版权所有©2018-2020</li>
+                            <li>infruit.com.cn  All  Right  Reserved. 京ICP备18047711号-3</li>
+                        </ul>
+                    </div>
+                    <div class="contact-bottom">
+                        <div class="code-item">
+                            <div class="code-name">气泡健康</div>
+                            <img src="./images/tmp-code.png">
+                        </div>
+                        <div class="code-item">
+                            <div class="code-name">小程序</div>
+                            <img src="./images/tmp-code.png">
+                        </div>
+                        <div class="code-item">
+                            <div class="code-name">淘宝店铺</div>
+                            <img src="./images/tmp-code.png">
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        `);
+        $.fn.fullpage({
+            slidesColor: ['#FF8300', '#FF4F88', '#FFCF3C', '#76DDC6','#FF8300','#FFCF3C'],//每一屏的背景色
+            anchors: ['page1', 'page2', 'page3', 'page4','page5','page6'],//url后的锚点
+            menu: '#menu',//顶部导航
+            scrollingSpeed: 600,//滚动转换的速度 ms
+            afterLoad: function(origin){
+
+                if(origin == 'page6'){
+                    $('.wap-sj').hide();
+                }else{
+                    $('.wap-sj').show();
+                }
+
+            }
+        });
+    
+        $('.wap-menu').click(function(){
+            $('.nav-section').toggle();
+        })
+        $('.section-item').click(function(){
+            $('.nav-section').hide();
+        })
+    }
+
+	
+
+});
+
+</script>
+</head>
+<body>
+    <!-- 顶部导航 -->
+    <div class="top-nav" id="menu">
+        <img src="./images/topbar-logo.png" alt="INFRUIT" class="top-logo" />
+        <img src="./images/wap-menu.png" class="wap-menu">
+        <div class="nav-section">
+            <div class="section-item" data-menuanchor="page1"><a href="#page1">首页</a></div>
+            <div class="section-item" data-menuanchor="page2"><a href="#page2">理念</a></div>
+            <div class="section-item" data-menuanchor="page3"><a href="#page3">姜酚</a></div>
+            <div class="section-item" data-menuanchor="page4"><a href="#page4">茶氨酸</a></div>
+            <div class="section-item" data-menuanchor="page5"><a href="#page5">关于我们</a></div>
+        </div>
+    </div>
+
+    <!-- 第一屏 -->
+    <div class="section">
+        <div class="mysection">
+            <div class="section-wrapper">
+                <img src="./images/big-logo-w.png" alt="INFRUIT" class="big-logo-w">
+                <h1 class="section1-h1">上班苦喝有无</h1>
+                <div class="h-aside">解决职场人亚健康的活性气泡水</div>
+                <img src="./images/section1-product.png" class="section1-product">
+            </div>
+        </div>
+    </div>
+    <!-- 第二屏 -->
+    <div class="section">
+        <div class="mysection">
+            <div class="section-wrapper">
+                <div class="slogn-wrapper">
+                    <h1 class="section2-h1">活性成分  +  无糖配方</h1>
+                    <div class="h-aside">活性气泡配合果味清香，享受味觉盛宴，喝出健康状态</div>
+                </div>
+                <img src="./images/wap-section2-flavor.png" class="wap-section2-flavor">
+                <img src="./images/section2-product.png" class="section2-product">
+            </div>
+            <img src="./images/section2-bg2.png" class="section2-bgleft">
+            <img src="./images/section2-bg3.png" class="section2-bgright">
+        </div>
+    </div>
+    <!-- 第三屏 -->
+    <div class="section" id="section3">
+        <div class="mysection">
+            <div class="section-row-wrapper">
+                <div class="section3-left">
+                    <img src="./images/section3-product.png" class="section3-product">
+                </div>
+                <div class="section3-right">
+                    <div class="content-text">
+                        <h1 class="section3-h1">01  姜柠</h1>
+                        <div class="h-aside">姜汁带气，健康美丽</div>
+                        <div class="h-aside2"><strong>0</strong>糖 <strong>0</strong>卡 <strong>0</strong>脂</div>
+                    </div>
+                    <img src="./images/section3-content.png" class="section3-content">
+                </div>
+            </div>
+            <!-- pc背景 -->
+            <img src="./images/section3-bg-bottom-left.png" class="section3-bgleft">
+            <img src="./images/section3-bg-bottom-right.png" class="section3-bgright">
+            <!-- wap背景 -->
+            <img src="./images/wap-section3-bottom-left.png" class="wap-section3-bgleft">
+            <img src="./images/wap-section3-bottom-right.png" class="wap-section3-bgright">
+            <div class="btn-buy">扫码购买<div class="code-box"><img src="./images/tmp-code.png"></div></div>
+        </div>
+    </div>
+    <!-- 第四屏 -->
+    <div class="section">
+        <div class="mysection">
+            <div class="section-row-wrapper">
+                <div class="section4-left">
+                    <img src="./images/section4-product.png" class="section3-product">
+                </div>
+                <div class="section3-right">
+                    <div class="content-text">
+                        <h1 class="section3-h1">02  茶氨酸</h1>
+                        <div class="h-aside">茶香带气，加强专注力</div>
+                        <div class="h-aside2"><strong>0</strong>糖 <strong>0</strong>卡 <strong>0</strong>脂</div>
+                    </div>
+                    <img src="./images/section4-content.png" class="section3-content">
+                </div>
+            </div>
+            <!-- pc背景 -->
+            <img src="./images/section4-bg-bottom-left.png" class="section3-bgleft">
+            <img src="./images/section4-bg-bottom-right.png" class="section3-bgright">
+            <!-- wap背景 -->
+            <img src="./images/wap-section4-bottom-left.png" class="wap-section3-bgleft">
+            <img src="./images/wap-section4-bottom-right.png" class="wap-section3-bgright">
+            <div class="btn-buy">扫码购买<div class="code-box"><img src="./images/tmp-code.png"></div></div>
+        </div>
+    </div>
+    <!-- 第五屏 -->
+    <div class="section">
+        <div class="last-section">
+            <div class="section5-top">
+                <div class="section-wrapper">
+                    <img src="./images/big-logo-w.png" alt="INFRUIT" class="big-logo-w">
+                    <h1 class="section1-h1">我们是谁</h1>
+                    <div class="our-desc">我们是一家科技公司，崇尚科学并遵循技术驱动。而作为互联网从业者，我们深刻体会到行业面临的健康挑战，期望用饮食产品</div>
+                    <div class="our-idea">「 为人们改善健康状态 」</div>
+                </div>
+                <img src="./images/section5-bottom.png" class="section5-img">
+                <img src="./images/wap-whoami-pic.png" class="wap-section5-img">
+            </div>
+            <div class="section5-bottom">
+                <div class="section5-bottom-wrapper">
+                    <div class="company-section">
+                        <img src="./images/bottom-logo.png" class="bottom-logo">
+                        <ul class="company-info">
+                            <li>客服电话：400-965-6505</li>
+                            <li>在线时间：周一至周五 10:00 —— 19:00</li>
+                            <li>北京微微盒子科技有限公司    版权所有©2018-2020</li>
+                            <li>infruit.com.cn  All  Right  Reserved. 京ICP备18047711号-3</li>
+                        </ul>
+                    </div>
+                    <div class="code-section">
+                        <div class="code-item">
+                            <div class="code-name">气泡健康</div>
+                            <img src="./images/tmp-code.png">
+                        </div>
+                        <div class="code-item">
+                            <div class="code-name">小程序</div>
+                            <img src="./images/tmp-code.png">
+                        </div>
+                        <div class="code-item">
+                            <div class="code-name">淘宝店铺</div>
+                            <img src="./images/tmp-code.png">
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <!-- 第六屏 仅wap -->
+    
+    <!-- wap页底部三角 -->
+    <img src="./images/wap-sj.png" class="wap-sj">
+</body>
+</html>
