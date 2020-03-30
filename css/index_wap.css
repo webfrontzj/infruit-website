@@ -79,6 +79,10 @@
     flex-direction: column;
     align-items: center;
 }
+.section1-wrapper{
+    height:66%;
+    justify-content: space-around;
+}
 .big-logo-w{
     width: 132px;
 }

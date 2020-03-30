@@ -6,8 +6,8 @@
 <meta name="viewport" content="width=device-width,height=device-height, user-scalable=no,initial-scale=1">
 <title>INFRUIT</title>
 <link rel="stylesheet" href="./css/jquery.fullpage.css">
-<link rel="stylesheet" media="screen and (min-width:1000px)" href="./css/index.css">
-<link rel="stylesheet" media="screen and (max-width:1000px)" href="./css/index_wap.css">
+<link rel="stylesheet" media="screen and (min-width:800px)" href="./css/index.css">
+<link rel="stylesheet" media="screen and (max-width:800px)" href="./css/index_wap.css">
 <style>
 
 .section { text-align: center; font: 50px "Microsoft Yahei"; color: #fff;}
@@ -20,13 +20,13 @@
 
 $(document).ready(function() {
     var client_w=document.body.clientWidth || document.documentElement.clientWidth;
-    if(client_w > 1000){
+    if(client_w > 800){
         $.fn.fullpage({
             slidesColor: ['#FF8300', '#FF4F88', '#FFCF3C', '#76DDC6','#FF8300'],//每一屏的背景色
             anchors: ['page1', 'page2', 'page3', 'page4','page5'],//url后的锚点
             menu: '#menu',//顶部导航
             navigation: true,//右侧小圆点导航
-            scrollingSpeed: 600,//滚动转换的速度 ms
+            scrollingSpeed: 300,//滚动转换的速度 ms
         });
 
     }else{
@@ -68,7 +68,7 @@ $(document).ready(function() {
             slidesColor: ['#FF8300', '#FF4F88', '#FFCF3C', '#76DDC6','#FF8300','#FFCF3C'],//每一屏的背景色
             anchors: ['page1', 'page2', 'page3', 'page4','page5','page6'],//url后的锚点
             menu: '#menu',//顶部导航
-            scrollingSpeed: 600,//滚动转换的速度 ms
+            scrollingSpeed: 300,//滚动转换的速度 ms
             afterLoad: function(origin){
 
                 if(origin == 'page6'){
@@ -115,7 +115,7 @@ $(document).ready(function() {
     <!-- 第一屏 -->
     <div class="section">
         <div class="mysection">
-            <div class="section-wrapper">
+            <div class="section-wrapper section1-wrapper">
                 <img src="./images/big-logo-w.png" alt="INFRUIT" class="big-logo-w">
                 <h1 class="section1-h1">上班苦喝有无</h1>
                 <div class="h-aside">解决职场人亚健康的活性气泡水</div>
@@ -140,7 +140,7 @@ $(document).ready(function() {
     </div>
     <!-- 第三屏 -->
     <div class="section" id="section3">
-        <div class="mysection">
+        <div class="mysection mysection3">
             <div class="section-row-wrapper">
                 <div class="section3-left">
                     <img src="./images/section3-product.png" class="section3-product">
@@ -165,7 +165,7 @@ $(document).ready(function() {
     </div>
     <!-- 第四屏 -->
     <div class="section">
-        <div class="mysection">
+        <div class="mysection mysection4">
             <div class="section-row-wrapper">
                 <div class="section4-left">
                     <img src="./images/section4-product.png" class="section3-product">
