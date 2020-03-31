@@ -267,6 +267,8 @@
     font-size: 26px;
 }
 .last-section .section-wrapper{
+    position: relative;
+    z-index: 1;
     width:70%;
     justify-content: flex-start;
 }
@@ -275,6 +277,7 @@
     width:700px;
     bottom:-46px;
     left:50%;
+    z-index: 0;
     transform: translateX(-50%);
 }
 .wap-section5-img{
